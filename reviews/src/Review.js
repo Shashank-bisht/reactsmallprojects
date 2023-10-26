@@ -24,7 +24,7 @@ const Review = () => {
   const prevPerson =()=>{
     setIndex(checkNumber(index-1))
   }
-
+// for getting random person
   const randomPerson=()=>{
 let randomNumber = Math.floor(Math.random()*people.length)
 if(randomNumber === index){
@@ -32,6 +32,7 @@ if(randomNumber === index){
 }
 setIndex(checkNumber(randomNumber))
   }
+  
   return <article className='review'>
     <div className='img-container'><img src={image} alt="" className='person-img' />
     <span className='quote-icon'>
