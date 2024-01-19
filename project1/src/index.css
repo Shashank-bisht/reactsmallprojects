@@ -63,6 +63,7 @@ body {
   background: var(--clr-pink);
   color: var(--clr-grey-9);
   line-height: 1.5;
+ 
   font-size: 0.875rem;
 }
 ul {
@@ -142,8 +143,9 @@ main {
 }
 
 .container {
+  height: 90vh;
   width: 80vw;
-  margin: 6rem 0;
+  margin: 3rem 0;
   max-width: var(--fixed-width);
   background: var(--clr-white);
   border-radius: var(--radius);
@@ -177,7 +179,7 @@ main {
   margin-bottom: 0;
 }
 .container button {
-  color: var(--clr-white);
+  color: black;
   display: block;
   width: 100%;
   border-color: transparent;
@@ -190,4 +192,5 @@ main {
   border-radius: var(--radius);
   outline: 1px solid rgba(0, 172, 0, 0.8);
   cursor: pointer;
+  
 }

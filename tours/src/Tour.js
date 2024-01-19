@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-const Tour = ({id, image, info, price, name, removeTour}) => {
-
+// receiving destructured props
+const Tour = ({id, image, info, price, name,removeTour}) => {
   const [readMore, setReadMore] = useState(false)
   
   return <article className='single-tour'>
@@ -12,6 +12,7 @@ const Tour = ({id, image, info, price, name, removeTour}) => {
     <h4 className='tour-price'>${price}</h4>
       </div>
       <p>{
+        // if readmore is true render info else render info.substring(0,200)
         readMore ?info:`${info.substring(0,200)}...`
       } <button onClick={()=> setReadMore(!readMore)}>{readMore?'show less':'read more'}</button>
       </p>

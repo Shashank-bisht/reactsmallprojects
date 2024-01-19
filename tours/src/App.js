@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Loading from './Loading'
 import Tours from './Tours'
+
 // ATTENTION!!!!!!!!!!
 
 const url = 'https://course-api.com/react-tours-project'
@@ -15,7 +16,6 @@ const removeTour=(id)=>{
 
   const fetchTours = async () =>{
     setLoading(true)
-
     try {
        // Attempt to fetch data from the specified URL
     const response = await fetch(url)
@@ -28,9 +28,12 @@ const removeTour=(id)=>{
       console.log(error)
     }
   } 
+
+// it will run only once when page reloads
   useEffect(()=>{
     fetchTours()
   },[])
+
   if(loading){
     return (
       <main>
@@ -38,6 +41,8 @@ const removeTour=(id)=>{
       </main>
     )
   }
+
+  
   if(tours.length === 0){
     return (
     <main>
@@ -48,7 +53,9 @@ const removeTour=(id)=>{
     </main>
     )
   }
+
   return <main>
+    {/* passing removeTour function as a prop */}
     <Tours tours={tours} removeTour = {removeTour}/>
   </main>
 }
